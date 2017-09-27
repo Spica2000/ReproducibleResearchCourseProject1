@@ -17,7 +17,7 @@ output: html_document
 
 ##1. Loading and processing the dataset
 ```{r, echo = TRUE}
-setwd("C:/Users/Vadim/Desktop/Курс DataScience/Reproducible research/Course Project 1")
+setwd("C:/Users/Vadim/Desktop/РљСѓСЂСЃ DataScience/Reproducible research/Course Project 1")
 data <- read.csv("activity.csv")
 ```
 
@@ -114,9 +114,9 @@ Adding a new column to newdata with days and after reclassing it with *weekdays*
 days <- weekdays(newdata[,2])
 newdata <- cbind(newdata,days)
 library(plyr)
-newdata$days <- revalue(newdata$days,c("понедельник"="weekday","вторник"="weekday","среда"="weekday",
-                                       "четверг"="weekday","пятница"="weekday"))
-newdata$days <- revalue(newdata$days,c("суббота"="weekend","воскресенье"="weekend"))
+newdata$days <- revalue(newdata$days,c("РїРѕРЅРµРґРµР»СЊРЅРёРє"="weekday","РІС‚РѕСЂРЅРёРє"="weekday","СЃСЂРµРґР°"="weekday",
+                                       "С‡РµС‚РІРµСЂРі"="weekday","РїСЏС‚РЅРёС†Р°"="weekday"))
+newdata$days <- revalue(newdata$days,c("СЃСѓР±Р±РѕС‚Р°"="weekend","РІРѕСЃРєСЂРµСЃРµРЅСЊРµ"="weekend"))
 ```
 
 Now plot using lattice library after constructing a new dataset with sums by weekdays/weekends
